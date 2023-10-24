@@ -5,9 +5,9 @@ import ListTask from "./component/ListTask";
 import Addtask from "./component/Addtask";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
-import DoneIcon from "@mui/icons-material/Done";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import { Input } from "@mui/material";
+import Badge from "react-bootstrap/Badge";
 
 function App() {
   const [filterByDescr, setFilterByDescr] = useState("");
@@ -46,12 +46,12 @@ function App() {
             All
           </MenuItem>
           <MenuItem value={true}>
-            <DoneIcon color="success" />
-            Done
+            <Badge bg="success">Done</Badge>
           </MenuItem>
           <MenuItem value={false}>
-            <DoneIcon color="disabled" />
-            Not Done
+            <Badge bg="warning" text="dark">
+              Not done
+            </Badge>
           </MenuItem>
         </Select>
       </Stack>
