@@ -2,7 +2,6 @@ import React from "react";
 import "../App.css";
 import { Stack } from "@mui/material";
 import Divider from "@mui/material/Divider";
-import DoneIcon from "@mui/icons-material/Done";
 import EditModel from "../actions/editModel";
 import Badge from "react-bootstrap/Badge";
 
@@ -21,11 +20,6 @@ const Task = ({ todo }) => {
           alignItems="center"
           spacing={2}
         >
-          {todo.isdone ? (
-            <DoneIcon color="success" />
-          ) : (
-            <DoneIcon color="disabled" />
-          )}
           <p>{todo.description}</p>
         </Stack>
 
@@ -48,7 +42,9 @@ const Task = ({ todo }) => {
             </h6>
           ) : (
             <h6>
-              <Badge bg="secondary">Not yet</Badge>
+              <Badge bg="warning" text="dark">
+                Not done
+              </Badge>
             </h6>
           )}
           <EditModel todoValue={todo} />
