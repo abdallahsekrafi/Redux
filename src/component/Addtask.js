@@ -11,7 +11,7 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
-import DoneIcon from "@mui/icons-material/Done";
+import Badge from "react-bootstrap/Badge";
 import { addTask } from "../actions/todoActionCreator";
 
 const Addtask = () => {
@@ -83,10 +83,12 @@ const Addtask = () => {
                   inputProps={{ "aria-label": "Without label" }}
                 >
                   <MenuItem value={true}>
-                    <DoneIcon color="success" /> Done
+                    <Badge bg="success">Done</Badge>
                   </MenuItem>
                   <MenuItem value={false}>
-                    <DoneIcon color="disabled" /> Not Done
+                    <Badge bg="warning" text="dark">
+                      Not done
+                    </Badge>
                   </MenuItem>
                 </Select>
               </Col>
